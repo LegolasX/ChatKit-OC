@@ -23,9 +23,9 @@
 #import "LCCKGroupConversationDetailViewController.h"
 #import "LCCKSingleConversationDetailViewController.h"
 
-#warning TODO: CHANGE TO YOUR OWN AppId and AppKey
-static NSString *const LCCKAPPID = @"dYRQ8YfHRiILshUnfFJu2eQM-gzGzoHsz";
-static NSString *const LCCKAPPKEY = @"ye24iIK6ys8IvaISMC4Bs5WK";
+//#warning TODO: CHANGE TO YOUR OWN AppId and AppKey
+static NSString *const LCCKAPPID = @"1sDAzHes1OVJekX7ktJEchzC-gzGzoHsz";
+static NSString *const LCCKAPPKEY = @"Xj8X7Co93WXeAHg0pB58IOvN";
 
 @implementation LCChatKitExample (Setting)
 
