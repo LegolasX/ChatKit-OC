@@ -22,9 +22,9 @@
 @implementation RedPacketChangeInputViewPlugin
 @synthesize inputViewRef = _inputViewRef;
 
-+ (void)load {
-    [self registerSubclass];
-}
+//+ (void)load {
+//    [self registerSubclass];
+//}
 
 + (LCCKInputViewPluginType)classPluginType {
     return 4;

@@ -17,13 +17,13 @@
 @synthesize inputViewRef = _inputViewRef;
 @synthesize sendCustomMessageHandler = _sendCustomMessageHandler;
 
-+ (void)load {
-    [self registerSubclass];
-}
-
-+ (LCCKInputViewPluginType)classPluginType {
-    return 3;
-}
+//+ (void)load {
+//    [self registerSubclass];
+//}
+//
+//+ (LCCKInputViewPluginType)classPluginType {
+//    return 3;
+//}
 
 #pragma mark -
 #pragma mark - LCCKInputViewPluginDelegate Method
