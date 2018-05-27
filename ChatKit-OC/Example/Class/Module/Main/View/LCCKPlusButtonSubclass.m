@@ -8,13 +8,16 @@
 
 #import "LCCKPlusButtonSubclass.h"
 #import "LCChatKitExample.h"
-
+#import <AipOcrSdk/AipOcrSdk.h>
 @interface LCCKPlusButtonSubclass () {
     CGFloat _buttonImageHeight;
 }
 @end
 @implementation LCCKPlusButtonSubclass
-
+// 默认的识别成功的回调
+void (^_successHandler)(id);
+// 默认的识别失败的回调
+void (^_failHandler)(NSError *);
 #pragma mark -
 #pragma mark - Life Cycle
 
@@ -69,12 +72,76 @@
 - (void)clickPublish {
     //如果提示群已满，可以换一个id
     //普通群人数上限是500，暂态聊天室无人数限制
-    [LCChatKitExample exampleOpenConversationViewControllerWithConversaionId:@"581966d28159ccabfc3bf892" fromNavigationController:nil];
+//    [LCChatKitExample exampleOpenConversationViewControllerWithConversaionId:@"sadfasdfasdfasdfbf892" fromNavigationController:nil];
+    [LCChatKitExample createGroupFromOCR];
+    [self configCallback];
+    UIViewController * vc = [AipGeneralVC ViewControllerWithHandler:^(UIImage *image) {
+        NSDictionary *options = @{@"language_type": @"CHN_ENG", @"detect_direction": @"true"};
+        [[AipOcrService shardService] detectTextBasicFromImage:image
+                                                   withOptions:options
+                                                successHandler:_successHandler
+                                                   failHandler:_failHandler];
+    }];
+    [self.window.rootViewController presentViewController:vc animated:true completion:nil];
 }
 
 + (CGFloat)constantOfPlusButtonCenterYOffsetForTabBarHeight:(CGFloat)tabBarHeight {
     return 2;
 }
+
+//+ (NSUInteger)indexOfPlusButtonInTabBar {
+//    return 1;
+//}
+- (void)configCallback {
+    __weak typeof(self) weakSelf = self;
+    
+    // 这是默认的识别成功的回调
+    _successHandler = ^(id result){
+        NSLog(@"%@", result);
+        NSString *title = @"识别结果";
+        NSMutableString *message = [NSMutableString string];
+        
+        if(result[@"words_result"]){
+            if([result[@"words_result"] isKindOfClass:[NSDictionary class]]){
+                [result[@"words_result"] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                    if([obj isKindOfClass:[NSDictionary class]] && [obj objectForKey:@"words"]){
+                        [message appendFormat:@"%@: %@\n", key, obj[@"words"]];
+                    }else{
+                        [message appendFormat:@"%@: %@\n", key, obj];
+                    }
+                    
+                }];
+            }else if([result[@"words_result"] isKindOfClass:[NSArray class]]){
+                for(NSDictionary *obj in result[@"words_result"]){
+                    if([obj isKindOfClass:[NSDictionary class]] && [obj objectForKey:@"words"]){
+                        [message appendFormat:@"%@\n", obj[@"words"]];
+                    }else{
+                        [message appendFormat:@"%@\n", obj];
+                    }
+                    
+                }
+            }
+            
+        }else{
+            [message appendFormat:@"%@", result];
+        }
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:weakSelf cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alertView show];
+        }];
+    };
+    
+    _failHandler = ^(NSError *error){
+        NSLog(@"%@", error);
+        NSString *msg = [NSString stringWithFormat:@"%li:%@", (long)[error code], [error localizedDescription]];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [[[UIAlertView alloc] initWithTitle:@"识别失败" message:msg delegate:weakSelf cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
+        }];
+    };
+}
+
+
 
 
 @end
