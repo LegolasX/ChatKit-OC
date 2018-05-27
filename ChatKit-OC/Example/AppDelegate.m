@@ -17,7 +17,7 @@
 #import "LCChatKit.h"
 #endif
 #import "LCCKLoginViewController.h"
-
+#import <AipOcrSdk/AipOcrSdk.h>
 #if XCODE_VERSION_GREATER_THAN_OR_EQUAL_TO_8
 /// Notification become independent from UIKit
 @import UserNotifications;
@@ -49,6 +49,7 @@
             NSLog(@"%@",error);
         }];
     }];
+    [[AipOcrService shardService] authWithAK:@"PqhpZpu8vTkNkgBODimNOu0d" andSK:@"OpzZpOehMKU6u1fpRNS213GuSjPXQ2iL"];
     
     self.window.rootViewController = loginViewController;
     self.window.backgroundColor = [UIColor whiteColor];

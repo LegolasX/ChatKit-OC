@@ -68,6 +68,12 @@
 		9AD665CE1D2277920040A4E3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0B721F1CED6644004FDACC /* CoreTelephony.framework */; };
 		9AD665CF1D22779A0040A4E3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0B72211CED664D004FDACC /* CoreLocation.framework */; };
 		9B4A5D37CF8F4BD2C4DC27F7 /* libPods-ChatKit-OC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 386378C3D567179BB0942772 /* libPods-ChatKit-OC.a */; };
+		A012724B20B5BF34008BDF9C /* IdcardQuality.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A012724A20B5BF34008BDF9C /* IdcardQuality.framework */; };
+		A012724C20B5BF34008BDF9C /* IdcardQuality.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A012724A20B5BF34008BDF9C /* IdcardQuality.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A06864BE20B5BA3800E72773 /* AipBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06864BC20B5BA3700E72773 /* AipBase.framework */; };
+		A06864BF20B5BA3900E72773 /* AipBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A06864BC20B5BA3700E72773 /* AipBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A06864C020B5BA3900E72773 /* AipOcrSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06864BD20B5BA3800E72773 /* AipOcrSdk.framework */; };
+		A06864C120B5BA3900E72773 /* AipOcrSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A06864BD20B5BA3800E72773 /* AipOcrSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7586C4F1D630681000C18B4 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7586C4E1D630681000C18B4 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +84,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A06864BF20B5BA3900E72773 /* AipBase.framework in Embed Frameworks */,
+				A06864C120B5BA3900E72773 /* AipOcrSdk.framework in Embed Frameworks */,
+				A012724C20B5BF34008BDF9C /* IdcardQuality.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +218,9 @@
 		9AC3A4DC1DF9C8BD00F3405F /* LCCKUserGroupItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCKUserGroupItemCell.m; sourceTree = "<group>"; };
 		9AC3A4E01DF9CE0300F3405F /* LCCKChatDetailHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCKChatDetailHelper.h; sourceTree = "<group>"; };
 		9AC3A4E11DF9CE0300F3405F /* LCCKChatDetailHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCKChatDetailHelper.m; sourceTree = "<group>"; };
+		A012724A20B5BF34008BDF9C /* IdcardQuality.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IdcardQuality.framework; sourceTree = "<group>"; };
+		A06864BC20B5BA3700E72773 /* AipBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AipBase.framework; sourceTree = "<group>"; };
+		A06864BD20B5BA3800E72773 /* AipOcrSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AipOcrSdk.framework; sourceTree = "<group>"; };
 		D3D1667D1FD4EBB90019FDFF /* ChatKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = ChatKit.podspec; path = ../ChatKit.podspec; sourceTree = "<group>"; };
 		E55D34EC8F162DB5443587B0 /* Pods-ChatKit-OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatKit-OC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatKit-OC/Pods-ChatKit-OC.debug.xcconfig"; sourceTree = "<group>"; };
 		E7586C4E1D630681000C18B4 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -220,11 +232,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7586C4F1D630681000C18B4 /* CoreMotion.framework in Frameworks */,
+				A06864BE20B5BA3800E72773 /* AipBase.framework in Frameworks */,
 				9AD665CF1D22779A0040A4E3 /* CoreLocation.framework in Frameworks */,
 				9AD665CE1D2277920040A4E3 /* CoreTelephony.framework in Frameworks */,
 				9AD665CD1D22778B0040A4E3 /* MobileCoreServices.framework in Frameworks */,
 				9AD665CC1D2277830040A4E3 /* SystemConfiguration.framework in Frameworks */,
 				9B4A5D37CF8F4BD2C4DC27F7 /* libPods-ChatKit-OC.a in Frameworks */,
+				A06864C020B5BA3900E72773 /* AipOcrSdk.framework in Frameworks */,
+				A012724B20B5BF34008BDF9C /* IdcardQuality.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +577,9 @@
 		9A754D421CECAC3E000967F1 = {
 			isa = PBXGroup;
 			children = (
+				A012724A20B5BF34008BDF9C /* IdcardQuality.framework */,
+				A06864BC20B5BA3700E72773 /* AipBase.framework */,
+				A06864BD20B5BA3800E72773 /* AipOcrSdk.framework */,
 				9A4CBADB1DB87F2000E61C92 /* ChatKit-OC.entitlements */,
 				D3D1667D1FD4EBB90019FDFF /* ChatKit.podspec */,
 				9A4730281CECAEC500AEB86F /* Example */,
@@ -731,7 +749,6 @@
 				9A754D491CECAC3E000967F1 /* Resources */,
 				9A1AD17B1CEDE640000FF26E /* Embed Frameworks */,
 				B2766B2FC2AFFF07E341B315 /* [CP] Copy Pods Resources */,
-				B1F7010B803B7915B1D2C045 /* 📦 Embed Pods Frameworks */,
 				5852033203B0746EE8645654 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
@@ -861,21 +878,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B1F7010B803B7915B1D2C045 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatKit-OC/Pods-ChatKit-OC-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B2766B2FC2AFFF07E341B315 /* [CP] Copy Pods Resources */ = {
@@ -1148,7 +1150,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = RHBBUXEY37;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"\"/Users/legolas/ERA/ChatKit-OC\"",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Class/Module/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1192,7 +1198,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = RHBBUXEY37;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Class/Module/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
