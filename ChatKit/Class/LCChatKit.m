@@ -64,7 +64,6 @@
     return _sharedLCChatKit;
 }
 
-#pragma mark -
 #pragma mark - LCChatKit Method
 
 + (void)setAppId:(NSString *)appId appKey:(NSString *)appKey {
@@ -76,7 +75,6 @@
     }
 }
 
-#pragma mark -
 #pragma mark - Service Delegate Method
 
 - (LCCKSessionService *)sessionService {

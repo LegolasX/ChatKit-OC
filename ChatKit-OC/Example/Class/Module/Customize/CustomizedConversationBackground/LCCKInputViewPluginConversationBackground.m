@@ -22,13 +22,13 @@
 #pragma mark -
 #pragma mark - LCCKInputViewPluginSubclassing Method
 
-+ (void)load {
-    [self registerCustomInputViewPlugin];
-}
-
-+ (LCCKInputViewPluginType)classPluginType {
-    return LCCKInputViewPluginTypeConversationBackground;
-}
+//+ (void)load {
+//    [self registerCustomInputViewPlugin];
+//}
+//
+//+ (LCCKInputViewPluginType)classPluginType {
+//    return LCCKInputViewPluginTypeConversationBackground;
+//}
 
 #pragma mark -
 #pragma mark - LCCKInputViewPluginDelegate Method
